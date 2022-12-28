@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core", "Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Configuration", "Unity.Services.Core.Configuration.csproj", "{83f3f1fb-e2a7-0c60-ae47-585f4fb91f4d}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{ed6ab580-f856-51df-a391-3439781bbf77}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PlasticSCM.Editor", "Unity.PlasticSCM.Editor.csproj", "{3d8cb304-f141-9b24-4db8-c221052f91d8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Core.Editor", "Unity.VisualScripting.Core.Editor.csproj", "{b957b5de-267e-6e08-07a4-6b246895d7a5}"
@@ -126,6 +128,8 @@ Global
 		{d54f3c25-1b41-edf2-af7e-899215c3ce51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83f3f1fb-e2a7-0c60-ae47-585f4fb91f4d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{83f3f1fb-e2a7-0c60-ae47-585f4fb91f4d}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ed6ab580-f856-51df-a391-3439781bbf77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ed6ab580-f856-51df-a391-3439781bbf77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3d8cb304-f141-9b24-4db8-c221052f91d8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3d8cb304-f141-9b24-4db8-c221052f91d8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{b957b5de-267e-6e08-07a4-6b246895d7a5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
