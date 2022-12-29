@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 public class EnemyMove : MonoBehaviour
 {
-  [SerializeField] private float speed = 1;
+  //[SerializeField] private float speed = 1;
   private List<Tile> path = new List<Tile>();
   private Enemy enemy;
    
@@ -15,9 +15,9 @@ public class EnemyMove : MonoBehaviour
     enemy.OnEnemyActive += Move;
   }
  
-   private void Move(EnemyData enemyData) 
+   private void Move() 
   {
-    this.speed = enemyData.Speed; 
+   // this.speed = enemyData.Speed; 
     FindPath();
     ResetPath();
     
@@ -49,7 +49,7 @@ public class EnemyMove : MonoBehaviour
       transform.LookAt(endPos);
       while(travelPercent<1)
       {
-        travelPercent += Time.deltaTime * (speed/2.5f);
+        travelPercent += Time.deltaTime * (enemy.Speed/2.5f);
         transform.position =Vector3.Lerp(startPos,endPos,travelPercent);
         yield return new WaitForEndOfFrame();
       }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, ITakeDamage
 {
-    private EnemyType enemyType;
+    [SerializeField] private EnemyType enemyType;
     private float speed;
     private float hp;
     private Renderer rend;
@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
 
     public bool CanAtk{get => canAtk;}
     public float Speed {get => speed;}
-    public event Action<EnemyData> OnEnemyActive;
+    public event Action OnEnemyActive;
 
     private void OnDisable() 
     {
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
         speed = enemyData.Speed;
         hp = enemyData.Hp;
         rend.sharedMaterial = enemyData.material;
-        OnEnemyActive?.Invoke(enemyData);
+        OnEnemyActive?.Invoke();
     }
      public void SetCanAtk(bool value)
     {
@@ -41,5 +41,10 @@ public class Enemy : MonoBehaviour, ITakeDamage
     public void TakeDamage(int damage)
     {
         Debug.Log("Take Damage"+ damage);
+    }
+    public void Slow(int slowPercent)
+    {
+        speed =- (slowPercent/100);
+        speed = Mathf.Clamp(speed,1-(slowPercent/100),5);
     }
 }

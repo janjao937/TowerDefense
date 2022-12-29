@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4558824591013851018, guid: 882fa78a3f8c6194d9bfc4269b4f1b0e, type: 3}
       propertyPath: m_Name
-      value: BulletSimplaeBullet
+      value: BulletSlow
       objectReference: {fileID: 0}
     - target: {fileID: 8166114602427688882, guid: 882fa78a3f8c6194d9bfc4269b4f1b0e, type: 3}
       propertyPath: m_RootOrder
@@ -57,3 +57,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 882fa78a3f8c6194d9bfc4269b4f1b0e, type: 3}
+--- !u!1 &6981136189747420500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4558824591013851018, guid: 882fa78a3f8c6194d9bfc4269b4f1b0e, type: 3}
+  m_PrefabInstance: {fileID: 6892135461560971998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1936303243706409859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6981136189747420500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41029fe7face2d8439bccb1c683dfcce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
