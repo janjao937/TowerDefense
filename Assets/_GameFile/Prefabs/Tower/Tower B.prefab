@@ -21,12 +21,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8604640081013841101, guid: 9faa5732ad407594d8425ae7c5ae74c0, type: 3}
       propertyPath: bulletDamage
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8604640081013841101, guid: 9faa5732ad407594d8425ae7c5ae74c0, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 3903198997040358975, guid: 3bef816134258324ebe7b9ed22d29bfa, type: 3}
+      objectReference: {fileID: 8825165049632892572, guid: 3bef816134258324ebe7b9ed22d29bfa, type: 3}
     - target: {fileID: 3281814817606929508, guid: 9faa5732ad407594d8425ae7c5ae74c0, type: 3}
       propertyPath: m_Name
       value: Tower B

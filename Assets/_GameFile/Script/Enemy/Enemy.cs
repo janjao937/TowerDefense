@@ -40,6 +40,6 @@ public class Enemy : MonoBehaviour, ITakeDamage
     }
     public void TakeDamage(int damage)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Take Damage"+ damage);
     }
 }

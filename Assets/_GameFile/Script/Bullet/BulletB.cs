@@ -4,8 +4,80 @@ using UnityEngine;
 
 public class BulletB : Bullet
 {
-    protected override void BulletEffect(GameObject target)
+    [SerializeField] private float boomRadius;
+    [SerializeField] private int boomDamage = 10;
+
+    private  List<float> distanceEnemyInArea = new List<float>();
+    private Dictionary<float,Enemy> getDamageDic = new Dictionary<float, Enemy>();
+  
+
+    private void FindArearObject()
     {
-        throw new System.NotImplementedException();
+        Collider[] colliders = Physics.OverlapSphere(transform.position,boomRadius);
+       
+        getDamageDic.Clear();
+        distanceEnemyInArea.Clear();
+
+        foreach(var collider in colliders)
+        {
+            if(collider.GetComponent<Enemy>())
+            {
+                float distance = Vector3.Distance(transform.position,collider.GetComponent<Enemy>().transform.position);
+
+                distanceEnemyInArea.Add(distance);
+                getDamageDic.Add(distance,collider.GetComponent<Enemy>());
+            }
+        }
+        GiveDamageToEnemy();
     }
+
+    private void GiveDamageToEnemy()
+    {
+        boomDamage = 10;//Set Boom Damage
+        //Sorting List by distance
+        distanceEnemyInArea.Sort(SortByDistance);
+        //Get Enemy In Dic
+        foreach(var i in distanceEnemyInArea)
+        {
+            Enemy e = getDamageDic[i];
+            e?.GetComponent<ITakeDamage>()?.TakeDamage(boomDamage);
+            boomDamage -=1;
+            boomDamage = Mathf.Clamp(boomDamage,8,10);
+        }
+
+        HitObject();
+    }
+    private int SortByDistance(float distancA,float distancB)
+    {
+        if(distancA<distancB)
+        {
+            return -1;
+        }
+        else if(distancA>distancB)
+        {
+            return 1;
+        }
+
+        return 0;
+    }
+
+    private void OnTriggerEnter(Collider other) 
+    {
+        FindArearObject();
+    }
+
+
+
+
+   protected override void BulletEffect(GameObject target)
+   {
+
+   }
+
+   #if UNITY_EDITOR
+    private void OnDrawGizmos() 
+    {
+        Gizmos.DrawWireSphere(transform.position,boomRadius);
+    }
+#endif
 }

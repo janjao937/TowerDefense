@@ -17,15 +17,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5778120886346272829, guid: 4bc96ffa03c63e843bd04600c860fc57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 49.35459
       objectReference: {fileID: 0}
     - target: {fileID: 5778120886346272829, guid: 4bc96ffa03c63e843bd04600c860fc57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5778120886346272829, guid: 4bc96ffa03c63e843bd04600c860fc57, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 29.966892
       objectReference: {fileID: 0}
     - target: {fileID: 5778120886346272829, guid: 4bc96ffa03c63e843bd04600c860fc57, type: 3}
       propertyPath: m_LocalRotation.w
@@ -55,15 +55,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1088824073184949368, guid: 4bc96ffa03c63e843bd04600c860fc57, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4bc96ffa03c63e843bd04600c860fc57, type: 3}
 --- !u!1 &2815128114212702786 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2172966401118590981, guid: 4bc96ffa03c63e843bd04600c860fc57, type: 3}
   m_PrefabInstance: {fileID: 4122682031665926727}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &3740076629806609544
-BoxCollider:
+--- !u!135 &4379536571761043789
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -73,5 +74,19 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0.10883272}
+  m_Radius: 0.99
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8825165049632892572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815128114212702786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76ffe0c4fceca848b4715a1b86ae7f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boomRadius: 15
+  boomDamage: 0

@@ -14,14 +14,14 @@ public abstract class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody>();   
     }
     
-    public void Init(GameObject firePos,int damage)
+    public virtual void Init(GameObject firePos,int damage)
     {
-        rb.AddForce(firePos.transform.forward*bulletForce*Time.deltaTime,ForceMode.Impulse);
+        rb.AddForce(firePos.transform.forward * bulletForce * Time.deltaTime ,ForceMode.Impulse);
         
         Destroy(gameObject,5);//Test
     }
 
-    private void HitObject()
+    protected void HitObject()
     {
         //Back To Pool
         Destroy(gameObject);
@@ -31,7 +31,7 @@ public abstract class Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other) 
     {
         if(!other?.gameObject?.GetComponent<Enemy>()) return;
-        
+
         HitObject();
     }
    
