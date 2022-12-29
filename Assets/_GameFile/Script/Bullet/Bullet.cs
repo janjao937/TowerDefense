@@ -30,7 +30,7 @@ public abstract class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other?.gameObject?.GetComponent<Bullet>()) return;
+        if(!other?.gameObject?.GetComponent<Enemy>()) return;
         
         HitObject();
     }
