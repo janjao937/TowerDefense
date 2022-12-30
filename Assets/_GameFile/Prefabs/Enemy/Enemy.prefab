@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 0
-  canAtk: 0
+  hpBar: {fileID: 1817931414656040133}
 --- !u!65 &1720329868077625532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -268,3 +268,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3062660306434713524, guid: 415b186dd1aff6f4fb876cf568deeb9e, type: 3}
   m_PrefabInstance: {fileID: 3727388052753718257}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1817931414656040133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3062660305029113652, guid: 415b186dd1aff6f4fb876cf568deeb9e, type: 3}
+  m_PrefabInstance: {fileID: 3727388052753718257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d899b6bdd52ab740a55d33270167d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

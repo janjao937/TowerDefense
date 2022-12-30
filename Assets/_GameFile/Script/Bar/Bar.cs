@@ -5,11 +5,11 @@ public class Bar : MonoBehaviour
 {
     [SerializeField] private Slider slider;
 
-    public void SetMaxBarValue(int value)
+    public void SetMaxBarValue(float value)
     {
         slider.maxValue = value;
         slider.value = value;
     }
-    public void SetBarValue(int value) => slider.value = value;
+    public void SetBarValue(float value) => slider.value = value;
     
 }

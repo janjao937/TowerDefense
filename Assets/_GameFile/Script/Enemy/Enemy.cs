@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private EnemyType enemyType;
+    [SerializeField] private Bar hpBar;
     private float speed;
     private float hp;
     private Renderer rend;
@@ -21,11 +22,13 @@ public class Enemy : MonoBehaviour, ITakeDamage
     {
         canAtk = false;
     }
+
     private void Awake() 
     {
         rend = GetComponentInChildren<Renderer>();
         canAtk = false;
     }
+    private void SetupHealthBar() => hpBar.SetMaxBarValue(hp);
    
     public void Init(EnemyData enemyData)
     {
@@ -33,6 +36,8 @@ public class Enemy : MonoBehaviour, ITakeDamage
         speed = enemyData.Speed;
         hp = enemyData.Hp;
         rend.sharedMaterial = enemyData.material;
+
+        SetupHealthBar();
         OnEnemyActive?.Invoke();
     }
      public void SetCanAtk(bool value)
@@ -41,7 +46,14 @@ public class Enemy : MonoBehaviour, ITakeDamage
     }
     public void TakeDamage(int damage)
     {
-        Debug.Log("Take Damage"+ damage);
+       // Debug.Log("Take Damage"+ damage);
+        hp -= damage;
+        hpBar.SetBarValue(hp);
+        if(hp<= 0) Death();
+    }
+    private void Death()
+    {
+        gameObject.SetActive(false);
     }
     public void Slow(int slowPercent)
     {

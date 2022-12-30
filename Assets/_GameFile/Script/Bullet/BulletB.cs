@@ -44,7 +44,7 @@ public class BulletB : Bullet
 
             if(CheckLastEnemyType(e)) boomDamage += 50/100;
 
-            e?.GetComponent<ITakeDamage>()?.TakeDamage(boomDamage);
+            e.GetComponent<ITakeDamage>()?.TakeDamage(boomDamage);
             SendCurrentEnemyTypeToBulletChecker(e);
 
             boomDamage -=1;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Bullet : MonoBehaviour
+public  class Bullet : MonoBehaviour
 {   
     private BulletChecker bulletChecker;
     protected int damage = default;
