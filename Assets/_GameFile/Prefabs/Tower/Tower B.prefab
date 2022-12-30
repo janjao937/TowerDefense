@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower B
       objectReference: {fileID: 0}
+    - target: {fileID: 3987424779176226995, guid: 9faa5732ad407594d8425ae7c5ae74c0, type: 3}
+      propertyPath: poolingObject
+      value: 
+      objectReference: {fileID: 2815128114212702786, guid: 3bef816134258324ebe7b9ed22d29bfa, type: 3}
     - target: {fileID: 6313009000012834928, guid: 9faa5732ad407594d8425ae7c5ae74c0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

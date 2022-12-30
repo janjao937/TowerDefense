@@ -19,7 +19,7 @@ public  class Bullet : MonoBehaviour
     public virtual void Init(GameObject firePos,int damage)
     {
         rb.AddForce(firePos.transform.forward * bulletForce * Time.deltaTime ,ForceMode.Impulse);
-        
+        this.damage = damage;
         Destroy(gameObject,5);//Test
     }
 

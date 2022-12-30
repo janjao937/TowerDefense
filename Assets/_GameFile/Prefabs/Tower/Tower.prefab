@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9181993461051580053}
   - component: {fileID: -8604640081013841101}
+  - component: {fileID: 3987424779176226995}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -218,8 +219,24 @@ MonoBehaviour:
   radius: 1
   firePos: {fileID: 7063042512816551494}
   weapon: {fileID: 603755327}
-  bulletPrefab: {fileID: 1088824073184949368, guid: 4bc96ffa03c63e843bd04600c860fc57, type: 3}
+  bulletPrefab: {fileID: 3350563893044790263, guid: 882fa78a3f8c6194d9bfc4269b4f1b0e, type: 3}
+  bulletDamage: 0
   fireRate: 0.5
+  poolingBullet: {fileID: 3987424779176226995}
+--- !u!114 &3987424779176226995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3281814817606929508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca3d90b31258204f8d09fd3a9da3afb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectCapacity: 30
+  poolingObject: {fileID: 4558824591013851018, guid: 882fa78a3f8c6194d9bfc4269b4f1b0e, type: 3}
 --- !u!1 &7063042512816551494
 GameObject:
   m_ObjectHideFlags: 0

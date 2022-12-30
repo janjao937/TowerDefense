@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
     public EnemyType EnemyType{get => enemyType;}
     public bool CanAtk{get => canAtk;}
     public float Speed {get => speed;}
+    public float Hp {get => hp;}
    
     public event Action OnEnemyActive;
 
@@ -46,7 +47,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
     }
     public void TakeDamage(int damage)
     {
-       // Debug.Log("Take Damage"+ damage);
+        Debug.Log("Take Damage"+ damage);
         hp -= damage;
         hpBar.SetBarValue(hp);
         if(hp<= 0) Death();

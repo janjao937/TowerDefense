@@ -229,6 +229,52 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1 &2055518316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055518318}
+  - component: {fileID: 2055518319}
+  m_Layer: 0
+  m_Name: PoolingEnemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2055518318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055518316}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -8.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8288391932835837112}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2055518319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055518316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca3d90b31258204f8d09fd3a9da3afb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectCapacity: 12
+  poolingObject: {fileID: 4413080304719529858, guid: 04a8cb6f4bc84734594db56f74ed1a2e, type: 3}
 --- !u!1 &8288391932835837118
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +305,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 799919803}
+  - {fileID: 2055518318}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -274,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b821ea0ccd70fd4c98565e60cdb26af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pooling: {fileID: 2055518319}
   enemyDatas:
   - EnemyType: 1
     material: {fileID: 2100000, guid: f84413e8b0d5ccc448c71992ecc6de1d, type: 2}

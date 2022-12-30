@@ -11,12 +11,17 @@ public class Tower : MonoBehaviour
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private int bulletDamage = default;
     [SerializeField] private float fireRate = 0.5f;
+    [SerializeField] private Pooling poolingBullet;
    
     private float fireRateTemp = 0; 
-    private float lookSpeed = 0.05f;
-    private float scale = 12f;
-    private GameObject target;
+    
+    protected float lookSpeed = 0.05f;
+    protected float scale = 12f;
+    protected GameObject target;
+    protected GameObject Weapon{get => weapon;}
+    protected float Radius {get => radius;}
 
+   
     private void Update() 
     {
         AimEnemy();
@@ -52,7 +57,15 @@ public class Tower : MonoBehaviour
     {
         if(fireRateTemp > fireRate)
         {
-            Bullet b = Instantiate(bulletPrefab,firePos.transform.position,weapon.transform.rotation);
+          
+           // Bullet b = Instantiate(bulletPrefab,firePos.transform.position,weapon.transform.rotation);
+    
+            Bullet b = poolingBullet.GetFromPool().GetComponent<Bullet>(); // Get From Pool
+
+            b.transform.position = firePos.transform.position;
+            b.transform.rotation = weapon.transform.rotation;
+            b.gameObject.SetActive(true);
+
             b.Init(firePos,bulletDamage);
             fireRateTemp = 0;
         }

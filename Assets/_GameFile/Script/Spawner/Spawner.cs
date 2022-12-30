@@ -4,6 +4,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
    // [SerializeField] private bool isSpawn = true;
+    [SerializeField] private Pooling pooling;
     [SerializeField] private EnemyData[] enemyDatas = new EnemyData[3];
     [SerializeField] private Enemy enemyPrefab;
     private float timeDistanceBetweenWave = 60;
@@ -57,7 +58,9 @@ public class Spawner : MonoBehaviour
     {
         int i = Random.Range(0,enemyDatas.Length);
         
-        Enemy enemy = Instantiate(enemyPrefab,transform);
+        //Enemy enemy = Instantiate(enemyPrefab,transform);
+        Enemy enemy = pooling.GetFromPool()?.GetComponent<Enemy>();
+        enemy.gameObject.SetActive(true);
         enemy.Init(enemyDatas[i]);
     }
 

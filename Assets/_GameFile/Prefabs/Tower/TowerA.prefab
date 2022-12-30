@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerA
       objectReference: {fileID: 0}
+    - target: {fileID: 3987424779176226995, guid: 9faa5732ad407594d8425ae7c5ae74c0, type: 3}
+      propertyPath: poolingObject
+      value: 
+      objectReference: {fileID: 4558824591013851018, guid: 882fa78a3f8c6194d9bfc4269b4f1b0e, type: 3}
     - target: {fileID: 9181993461051580053, guid: 9faa5732ad407594d8425ae7c5ae74c0, type: 3}
       propertyPath: m_RootOrder
       value: 0
