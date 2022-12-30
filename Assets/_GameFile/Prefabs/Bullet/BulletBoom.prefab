@@ -89,4 +89,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boomRadius: 15
-  boomDamage: 0
+  boomDamage: 10

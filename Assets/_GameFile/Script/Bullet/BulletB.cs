@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletB : Bullet
 {
-    [SerializeField] private float boomRadius;
+    [SerializeField] private float boomRadius = 15;
     [SerializeField] private int boomDamage = 10;
 
     private  List<float> distanceEnemyInArea = new List<float>();
@@ -34,13 +34,19 @@ public class BulletB : Bullet
     private void GiveDamageToEnemy()
     {
         boomDamage = 10;//Set Boom Damage
+
         //Sorting List by distance
         distanceEnemyInArea.Sort(SortByDistance);
         //Get Enemy In Dic
         foreach(var i in distanceEnemyInArea)
         {
             Enemy e = getDamageDic[i];
+
+            if(CheckLastEnemyType(e)) boomDamage += 50/100;
+
             e?.GetComponent<ITakeDamage>()?.TakeDamage(boomDamage);
+            SendCurrentEnemyTypeToBulletChecker(e);
+
             boomDamage -=1;
             boomDamage = Mathf.Clamp(boomDamage,8,10);
         }
@@ -66,13 +72,6 @@ public class BulletB : Bullet
         FindArearObject();
     }
 
-
-
-
-   protected override void BulletEffect(GameObject target)
-   {
-
-   }
 
    #if UNITY_EDITOR
     private void OnDrawGizmos() 

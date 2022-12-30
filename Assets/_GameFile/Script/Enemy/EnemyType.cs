@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum EnemyType 
 {
+   TypeDefault,
    TypeA,
    TypeB,
    TypeC,

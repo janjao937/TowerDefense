@@ -10,10 +10,11 @@ public class Enemy : MonoBehaviour, ITakeDamage
     private float hp;
     private Renderer rend;
 
-    [SerializeField] private bool canAtk = false;
-
+    private bool canAtk = false;
+    public EnemyType EnemyType{get => enemyType;}
     public bool CanAtk{get => canAtk;}
     public float Speed {get => speed;}
+   
     public event Action OnEnemyActive;
 
     private void OnDisable() 
